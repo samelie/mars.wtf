@@ -1,0 +1,71 @@
+{
+  "ignore": [
+    "node_modules",
+    "node_modules/*",
+    "node_modules/**/*"
+  ],
+  "env":
+  {
+    "development":
+    {
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        "transform-decorators-legacy"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets":
+            {
+              "node": "current"
+            }
+          }
+        ],
+        [
+          "@babel/preset-react",
+          {
+            "development": true
+          }
+        ]
+      ]
+    },
+    "production":
+    {
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        "transform-decorators-legacy"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets":
+            {
+              "node": "0.8"
+            }
+          }
+        ],
+        "@babel/preset-react"
+      ]
+    },
+    "test":
+    {
+      "plugins": [
+        ["module-resolver",
+        {
+          "root": ["./src/js"]
+        }],
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        "transform-decorators-legacy"
+      ],
+      "presets": [
+        ["@babel/preset-env"],
+        ["@babel/preset-react"]
+      ]
+    }
+  }
+}

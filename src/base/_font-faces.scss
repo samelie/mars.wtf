@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'asapregular';
+	src: url('../dist/assets/font/asap/asap-regular-webfont.woff2') format('woff2'),
+			url('../dist/assets/font/asap/asap-regular-webfont.woff') format('woff'),
+			url('../dist/assets/font/asap/asap-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'action_manregular';
+  src: url('../dist/assets/font/actionman/action_man-webfont.eot');
+  src: url('../dist/assets/font/actionman/action_man-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../dist/assets/font/actionman/action_man-webfont.woff') format('woff'),
+       url('../dist/assets/font/actionman/action_man-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'lulo';
+	src: url('../dist/assets/font/lulo/lulo_clean_one-webfont.eot');
+	src: url('../dist/assets/font/lulo/lulo_clean_one-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../dist/assets/font/lulo/lulo_clean_one-webfont.woff') format('woff'),
+			 url('../dist/assets/font/lulo/lulo_clean_one-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

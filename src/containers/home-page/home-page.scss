@@ -1,0 +1,57 @@
+@import 'media-queries';
+@import 'colors';
+@import 'easings';
+.home {
+    color: $c-grey;
+    padding: 20px;
+    &__title {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    &__desc {
+        font-size: 12px;
+        max-width: 320px;
+    }
+    &__link {
+        color: $c-white;
+        text-shadow: 1px 1px 0px black;
+        text-decoration: none;
+    }
+}
+
+.project {
+    /*size of image*/
+    width: 300px;
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    position: relative;
+    &__title {
+        width: 100%;
+        height: 100%;
+        &:hover {
+            text-decoration: underline;
+            .project__image {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+        }
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+        transition: clip-path 300ms $_easeOutCubic;
+    }
+    .title__text__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+    .title__text {}
+}
