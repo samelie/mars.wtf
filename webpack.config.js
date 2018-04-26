@@ -62,14 +62,14 @@ module.exports = env => {
     };
 
     const postcssLoader = {
-      loader: 'postcss-loader',
+      loader: "postcss-loader",
       options: {
         sourceMap: isDev,
-        ident: 'postcss',
+        ident: "postcss",
         plugins: loader => [
-          require('postcss-easings'),
-          require('autoprefixer')({
-            browsers: ['last 2 versions', 'Safari 8', 'ie > 9'],
+          require("postcss-easings"),
+          require("autoprefixer")({
+            browsers: ["last 2 versions", "Safari 8", "ie > 9"],
           }),
         ],
       },
@@ -84,7 +84,7 @@ module.exports = env => {
               fallback: "style-loader",
               use: [
                 {
-                  loader: 'css-loader',
+                  loader: "css-loader",
                 },
                 {
                   ...sassLoader,
@@ -98,13 +98,13 @@ module.exports = env => {
             test: /\.(css|scss)$/,
             exclude: [/node_modules/],
             use: [
-            'style-loader',
+              "style-loader",
               {
-                  loader: 'css-loader',
-                },
-                {
-                  ...sassLoader,
-                },
+                loader: "css-loader",
+              },
+              {
+                ...sassLoader,
+              },
             ],
           },
         ];
@@ -151,7 +151,7 @@ module.exports = env => {
     output: {
       filename: "bundle.[name].[hash].js",
       path: resolve(__dirname, constants.DIST),
-      publicPath: "/",
+      publicPath: "",
       pathinfo: !env.prod,
     },
     context: constants.SRC_DIR,
@@ -205,6 +205,11 @@ module.exports = env => {
           test: /\.(glsl|vert|frag)$/,
           loader: "shader-loader",
           exclude: /node_modules/,
+          options: {
+            glsl: {
+              chunkPath: resolve("/glsl/chunks"),
+            },
+          },
         },
       ].concat(stylesLoaders()),
     },
@@ -229,6 +234,10 @@ module.exports = env => {
           quiet: true,
         })
       ),
+      new webpack.LoaderOptionsPlugin({
+        options: {
+        },
+      }),
       new Dotenv({
         path: isDev ? ".dev.env" : ".prod.env",
       }),
