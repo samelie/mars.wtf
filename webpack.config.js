@@ -150,7 +150,7 @@ module.exports = env => {
     },
     output: {
       filename: "bundle.[name].[hash].js",
-      path: resolve(__dirname),
+      path: resolve(__dirname, constants.DIST),
       publicPath: "",
       pathinfo: !env.prod,
     },
@@ -161,7 +161,7 @@ module.exports = env => {
       stats: {
         colors: true,
       },
-      contentBase: resolve(__dirname),
+      contentBase: resolve(__dirname, constants.DIST),
       historyApiFallback: !!env.dev,
       port: 8081,
     },
