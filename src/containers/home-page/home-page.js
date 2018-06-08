@@ -25,7 +25,7 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    let _url = `assets/json/projects.json?z=${Math.random()}`;
+    let _url = `dist/assets/json/projects.json?z=${Math.random()}`;
     let _j = fetchJson(_url).then(data => {
       this.setState({
         projects: data.map(project => {
@@ -33,7 +33,7 @@ class HomePage extends Component {
         }),
       });
     });
-    let _copy = `assets/json/copy.json?z=${Math.random()}`;
+    let _copy = `dist/assets/json/copy.json?z=${Math.random()}`;
     fetchJson(_copy).then(data => {
       this.setState({
         copy: data,
