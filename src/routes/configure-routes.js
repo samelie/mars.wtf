@@ -5,7 +5,7 @@ import HomePage from '../containers/home-page/home-page';
 
 export default function configureRoutes() {
   return (
-    <Route path={`/mars.wtf/`} component={HomePage}>
+    <Route path={`/`} component={HomePage}>
       <IndexRoute component={HomePage}/>
     </Route>
   );
